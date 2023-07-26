@@ -1,106 +1,96 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>Your Website</title>
-    <style>
-        /* Add some basic styles for the tabs and tab content */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        #navbar {
-            background-color: #333;
-            overflow: hidden;
-        }
-
-        #navbar a {
-            float: left;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
-        }
-
-        #navbar a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-
-        #tab-content {
-            padding: 20px;
-        }
-
-        #home p {
-            /* Add some styles for the additional lines in the Home section */
-            font-size: 18px;
-            line-height: 1.6;
-        }
-    </style>
+  <title>Viktoria Haghani</title>
+  <style>
+    /* Basic styling for the navigation bar */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+    nav {
+      background-color: #444;
+      overflow: hidden;
+    }
+    nav a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    /* Hide content sections by default */
+    .tab-content {
+      display: none;
+      padding: 20px;
+    }
+    /* Show the selected content section */
+    .active {
+      display: block;
+    }
+  </style>
 </head>
-
 <body>
-    <div id="navbar">
-        <!-- Navigation bar with tabs -->
-        <a href="#home">Home</a>
-        <a href="#cv">CV</a>
-        <a href="#news">News</a>
-        <a href="#contact">Contact</a>
-    </div>
+  <header>
+    <h1>Viktoria Haghani</h1>
+  </header>
+  <nav>
+    <a href="#" class="tab-link" onclick="showTab(event, 'home')">Home</a>
+    <a href="#" class="tab-link" onclick="showTab(event, 'cv')">CV</a>
+    <a href="#" class="tab-link" onclick="showTab(event, 'news')">News</a>
+    <a href="#" class="tab-link" onclick="showTab(event, 'contact')">Contact</a>
+  </nav>
+  <!-- Content sections -->
+  <div id="home" class="tab-content">
+    <h2>Welcome!</h2>
+    <p>PhD Candidate | Janine LaSalle Lab & Ian Korf Lab</p>
+    <p>Department of Medical Microbiology and Immunology</p>
+    <p>Integrative Genetics and Genomics Ph.D. Program</p>
+    <p>University of California, Davis</p>
+    <p>Pronouns: She/her/hers</p>
+  </div>
+  <div id="cv" class="tab-content">
+    <h2>Curriculum Vitae</h2>
+    <p>This is the CV section.</p>
+  </div>
+  <div id="news" class="tab-content">
+    <h2>News</h2>
+    <p>This is the News section.</p>
+  </div>
+  <div id="contact" class="tab-content">
+    <h2>Contact Me</h2>
+    <p>This is the Contact section.</p>
+  </div>
 
-    <!-- Tab content -->
-    <div id="tab-content">
-        <div id="home" class="tab">
-            <!-- Content for the Home page -->
-            <h2>Welcome to My Website</h2>
-            <p>PhD Candidate | Janine LaSalle Lab & Ian Korf Lab</p>
-            <p>Department of Medical Microbiology and Immunology</p>
-            <p>Integrative Genetics and Genomics Ph.D. Program</p>
-            <p>University of California, Davis</p>
-            <p>Pronouns: She/her/hers</p>
-        </div>
+  <script>
+    // Function to show the selected tab and its content
+    function showTab(evt, tabName) {
+      var i, tabContent, tabLinks;
 
-        <div id="cv" class="tab">
-            <!-- Content for the CV page -->
-            <h2>Curriculum Vitae</h2>
-            <!-- Add CV content here -->
-        </div>
+      tabContent = document.getElementsByClassName('tab-content');
+      for (i = 0; i < tabContent.length; i++) {
+        tabContent[i].style.display = 'none';
+      }
 
-        <div id="news" class="tab">
-            <!-- Content for the News page -->
-            <h2>Latest News</h2>
-            <!-- Add news content here -->
-        </div>
+      tabLinks = document.getElementsByClassName('tab-link');
+      for (i = 0; i < tabLinks.length; i++) {
+        tabLinks[i].classList.remove('active');
+      }
 
-        <div id="contact" class="tab">
-            <!-- Content for the Contact page -->
-            <h2>Contact Me</h2>
-            <!-- Add contact information and form here -->
-        </div>
-    </div>
-
-    <script>
-        // JavaScript to handle tab navigation
-        const tabs = document.querySelectorAll('.tab');
-        function showTab(tabId) {
-            tabs.forEach(tab => {
-                tab.style.display = tab.id === tabId ? 'block' : 'none';
-            });
-        }
-        showTab('home'); // Show the Home tab by default
-
-        const navbarLinks = document.querySelectorAll('#navbar a');
-        navbarLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const tabId = link.getAttribute('href').substr(1);
-                showTab(tabId);
-            });
-        });
-    </script>
+      document.getElementById(tabName).style.display = 'block';
+      evt.currentTarget.classList.add('active');
+    }
+  </script>
 </body>
-
 </html>
