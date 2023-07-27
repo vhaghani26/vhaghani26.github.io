@@ -42,11 +42,18 @@
 
     /* Style the image on the Home tab */
     .home-image {
-      float: right;
+      float: left;
       width: 200px;
-      margin-left: 20px;
+      margin-right: 20px;
       border: 2px solid #ccc;
       border-radius: 5px;
+    }
+
+    /* Clear floating elements after the image */
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
     }
   </style>
 </head>
@@ -63,12 +70,14 @@
   <!-- Content sections -->
   <div id="home" class="tab-content">
     <h2>Welcome!</h2>
-    <p><br>PhD Candidate | Janine LaSalle Lab & Ian Korf Lab</p>
-    <p>Department of Medical Microbiology and Immunology</p>
-    <p>Integrative Genetics and Genomics Ph.D. Program</p>
-    <p>University of California, Davis</p>
-    <p>Pronouns: She/her(s)</p>
-    <img src="https://raw.githubusercontent.com/vhaghani26/vhaghani26.github.io/main/Images/lasallelabportrait_vh.jpg" alt="Viki_Haghani" class="home-image">
+    <div class="clearfix">
+      <img src="https://raw.githubusercontent.com/vhaghani26/vhaghani26.github.io/main/Images/lasallelabportrait_vh.jpg" alt="Viki_Haghani" class="home-image">
+      <p><br>PhD Candidate | Janine LaSalle Lab & Ian Korf Lab</p>
+      <p>Department of Medical Microbiology and Immunology</p>
+      <p>Integrative Genetics and Genomics Ph.D. Program</p>
+      <p>University of California, Davis</p>
+      <p>Pronouns: She/her(s)</p>
+    </div>
   </div>
   <div id="cv" class="tab-content">
     <h2>Curriculum Vitae</h2>
