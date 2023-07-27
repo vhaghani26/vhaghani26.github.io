@@ -56,12 +56,27 @@
       display: table;
       clear: both;
     }
+    
+    /* Format second level header */
     h2 {
       font-size: 30px;
       text-align: center;
     }
+    
+    /* Format third level header */
     h3 {
       font-size: 26px;
+    }
+    
+    /* Create custom list style for indented lists */
+    .custom-list {
+      list-style-type: none;
+      padding-left: 20px; /* Adjust the value to change the indentation */
+    }    
+    
+    .custom-list li:before {
+      content: "\2022"; /* Unicode bullet point (•) */
+      padding-right: 10px; /* Add spacing between the bullet point and the list item */
     }
   </style>
 </head>
@@ -97,6 +112,17 @@
       <h3>Other Experiences and Affiliations</h3>
       <h3>Projects</h3>
       <h3>Qualifications/Skills</h3>
+        <p>Intermediate/Advanced bioinformatics experience (Python, GitHub, Conda, Snakemake)</p>
+        <p>Management of high-performance computing environments</p>
+        <p>Type 90+ words per minute</p>
+        <p>Strong oral and written communication skills</p>
+        <p>Ability to prioritize and perform tasks with minimal supervision</p>
+        <p>Website creation and formatting</p>
+          <ul class="custom-list">
+              <li>https://ucanr.edu/sites/Small_Farms_/</li>
+              <li>https://mmi-lab.ucdavis.edu/</li>
+              <li>https://vhaghani26.github.io/</li>
+          </ul>
       <h3>Languages</h3>
         <p>English (fluent: speaking, reading, writing)</p>
         <p>Armenian (conversational speaking)</p>
