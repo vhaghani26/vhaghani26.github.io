@@ -108,7 +108,18 @@
   </div>
   <div id="contact" class="tab-content">
     <h2>Contact Me</h2>
-    <p>This is the Contact section.</p>
+        <form action="mailto:vicky.haghani@gmail.com" method="post" enctype="text/plain">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+        
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+        
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+        
+            <input type="submit" value="Submit">
+        </form>    
   </div>
 
   <script>
