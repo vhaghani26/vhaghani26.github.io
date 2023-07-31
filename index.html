@@ -71,19 +71,16 @@
       margin-bottom: 15px; /* Increase spacing below the h3 elements */
     }
     
+    /* Create custom list style for indented lists */
     .custom-list {
       list-style-type: none;
       padding-left: 20px; /* Adjust the value to change the indentation */
-    }
-    
-    .custom-list li {
-      margin-bottom: 15px; /* Increase spacing below each list item */
-      display: flex; /* Use flexbox to align the bullet and text */
-    }
-    
+    }    
+      
     .custom-list li:before {
       content: "\2022"; /* Unicode bullet point (•) */
       margin-right: 15px; /* Add spacing between the bullet point and the list item */
+      margin-bottom: 15px; /* Increase spacing below each list item */
     }
   </style>
 </head>
@@ -136,6 +133,17 @@
           <p><strong><u>Haghani V.</u></strong>, Yasui D.H., Sharifi O., Korf I.F., LaSalle J.M. Defining the role of MeCP2e1 Rett Syndrome Symptom Progression. Poster presented by V. Haghani at the Bay Area Chromatin Club Symposium 2023.</p>
         <p><strong>2022</strong></p>
           <p><strong><u>Haghani V.</u></strong>, Yasui D.H., Sharifi O., Korf I.F., LaSalle J.M. Defining the role of MeCP2e1 Rett Syndrome Symptom Progression. Poster presented by V. Haghani at the UC Davis Human Genomics Symposium 2022 and received a $25 prize for winning the poster contest.</p>
+
+    
+          
+            
+    
+
+          
+          Expand Down
+    
+    
+  
           <p><strong><u>Haghani V.</u></strong>, Yasui D.H., Sharifi O., Korf I.F., LaSalle J.M. Defining the role of MeCP2e1 Rett Syndrome Symptom Progression. Poster presented by V. Haghani at the UC Davis Genome Center Halloween Symposium 2022.</p>
           <p><strong><u>Haghani V.</u></strong>, Yasui D.H., Sharifi O.,  Korf I.F., LaSalle J.M. Clarifying the role of MeCP2 in the Timing of Symptom Progression in Rett Syndrome. Abstract submitted, poster presented, and 10-minute oral talk given by V. Haghani at the 6th Annual Biomedical Research Graduate Student Symposium 2022.</p>
           <p>Sharifi O., Yasui D.H., Korf I.F., <strong><u>Haghani V.</u></strong>, Hakam S., Johansen N., Fraga K., LaSalle J.M. Longitudinal cortical snRNA-seq reveals sexually dimorphic cellular trajectories of disease progression in a mouse model of Rett Syndrome. Poster presented by O. Sharifi at the Developmental Origins of Health and Disease (DOHaD) World Congress 2022.</p>
@@ -297,9 +305,9 @@
       <h3>Projects</h3>
         <p><strong>Planet Heroes: Sustainability is Elementary - Easy as TK - 8 (Recycling Competition and Workshop Series)</strong> | Net Impact Davis | Davis, CA | 2019</p>
           <ul class="custom-list">
-            <li></a>Wrote a formal <a href="https://raw.githubusercontent.com/vhaghani26/vhaghani26.github.io/main/Linked_Items/net_impact_2018-2019_project_proposal.pdf">project proposal</a> and <a href="https://raw.githubusercontent.com/vhaghani26/vhaghani26.github.io/main/Linked_Items/net_impact_2018-2019_project_evaluation.pdf">project evaluation</a></li>
-            <li>Encouraged kids to recycle by implementing a competition that brought in 7985 recyclable items and raised $440.22</li>
-            <li>Used Powtoon to create 7 workshops that encourage kids to recycle and promote the competition at Dixon Montessori Charter School</li>
+              <li></a>Wrote a formal <a href="https://raw.githubusercontent.com/vhaghani26/vhaghani26.github.io/main/Linked_Items/net_impact_2018-2019_project_proposal.pdf">project proposal</a> and <a href="https://raw.githubusercontent.com/vhaghani26/vhaghani26.github.io/main/Linked_Items/net_impact_2018-2019_project_evaluation.pdf">project evaluation</a></li>
+              <li>Encouraged kids to recycle by implementing a competition that brought in 7985 recyclable items and raised $440.22</li>
+              <li>Used Powtoon to create 7 workshops that encourage kids to recycle and promote the competition at Dixon Montessori Charter School</li>
           </ul>
         <p><strong>Up to Us 2018 and 2019</strong> | Up to Us | Oakland, CA | Fall 2018, Fall 2019</p>
           <ul class="custom-list">
@@ -395,26 +403,21 @@
             <input type="submit" value="Submit">
         </form>    
   </div>
-
   <script>
     // Function to show the selected tab and its content
     function showTab(evt, tabName) {
       var i, tabContent, tabLinks;
-
       tabContent = document.getElementsByClassName('tab-content');
       for (i = 0; i < tabContent.length; i++) {
         tabContent[i].style.display = 'none';
       }
-
       tabLinks = document.getElementsByClassName('tab-link');
       for (i = 0; i < tabLinks.length; i++) {
         tabLinks[i].classList.remove('active');
       }
-
       document.getElementById(tabName).style.display = 'block';
       evt.currentTarget.classList.add('active');
     }
-
     // Automatically show the "Home" tab on page load
     document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("home").style.display = "block";
