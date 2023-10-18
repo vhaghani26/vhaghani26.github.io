@@ -395,24 +395,31 @@
         </form>    
   </div>
   <script>
-    // Function to show the selected tab and its content
-    function showTab(evt, tabName) {
-      var i, tabContent, tabLinks;
-      tabContent = document.getElementsByClassName('tab-content');
-      for (i = 0; i < tabContent.length; i++) {
-        tabContent[i].style.display = 'none';
-      }
-      tabLinks = document.getElementsByClassName('tab-link');
-      for (i = 0; i < tabLinks.length; i++) {
-        tabLinks[i].classList.remove('active');
-      }
-      document.getElementById(tabName).style.display = 'block';
-      evt.currentTarget.classList.add('active');
-    }
-    // Automatically show the "Home" tab on page load
-    document.addEventListener("DOMContentLoaded", function () {
-      document.getElementById("home").style.display = "block";
-    });
+  	// Function to show the selected tab and its content
+  	function showTab(evt, tabName) {
+  		var i, tabContent, tabLinks;
+  		tabContent = document.getElementsByClassName('tab-content');
+  		for (i = 0; i < tabContent.length; i++) {
+  			tabContent[i].style.display = 'none';
+  		}
+  		tabLinks = document.getElementsByClassName('tab-link');
+  		for (i = 0; i < tabLinks.length; i++) {
+  			tabLinks[i].classList.remove('active');
+  		}
+  		document.getElementById(tabName).style.display = 'block';
+  		evt.currentTarget.classList.add('active');
+  	}
+  
+  	// Automatically show the correct tab based on the URL hash fragment
+  	document.addEventListener("DOMContentLoaded", function () {
+  		var currentHash = window.location.hash;
+  		if (currentHash) {
+  			showTab({ currentTarget: document.querySelector('.tab-link[href="' + currentHash + '"]') }, currentHash.substr(1));
+  		} else {
+  			// Default to showing the "Home" tab
+  			document.getElementById("home").style.display = "block";
+  		}
+  	});
   </script>
 </body>
 </html>
