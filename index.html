@@ -89,10 +89,10 @@
     <h1>Viktoria Haghani</h1>
   </header>
   <nav>
-    <a href="#" class="tab-link" onclick="showTab(event, 'home')">Home</a>
-    <a href="#" class="tab-link" onclick="showTab(event, 'cv')">CV</a>
-    <a href="#" class="tab-link" onclick="showTab(event, 'news')">News</a>
-    <a href="#" class="tab-link" onclick="showTab(event, 'contact')">Contact</a>
+    <a href="#home" class="tab-link" onclick="showTab(event, 'home')">Home</a>
+    <a href="#cv" class="tab-link" onclick="showTab(event, 'cv')">CV</a>
+    <a href="#news" class="tab-link" onclick="showTab(event, 'news')">News</a>
+    <a href="#contact" class="tab-link" onclick="showTab(event, 'contact')">Contact</a>
   </nav>
   <!-- Content sections -->
   <div id="home" class="tab-content">
@@ -413,24 +413,6 @@
     document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("home").style.display = "block";
     });
-  </script>
-  <script>
-  function showTab(event, tabId) {
-    // Prevent the default link behavior (i.e., navigating to a new page)
-    event.preventDefault();
-
-    // Hide all tab content sections
-    const tabContents = document.querySelectorAll('.tab-content');
-    tabContents.forEach((tab) => {
-      tab.style.display = 'none';
-    });
-
-    // Show the selected tab
-    document.getElementById(tabId).style.display = 'block';
-  }
-
-  // Show the initial tab (e.g., 'home') when the page loads
-  showTab(event, 'home');
   </script>
 </body>
 </html>
