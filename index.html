@@ -414,5 +414,23 @@
       document.getElementById("home").style.display = "block";
     });
   </script>
+  <script>
+  function showTab(event, tabId) {
+    // Prevent the default link behavior (i.e., navigating to a new page)
+    event.preventDefault();
+
+    // Hide all tab content sections
+    const tabContents = document.querySelectorAll('.tab-content');
+    tabContents.forEach((tab) => {
+      tab.style.display = 'none';
+    });
+
+    // Show the selected tab
+    document.getElementById(tabId).style.display = 'block';
+  }
+
+  // Show the initial tab (e.g., 'home') when the page loads
+  showTab(event, 'home');
+  </script>
 </body>
 </html>
