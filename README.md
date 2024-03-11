@@ -3,6 +3,3 @@
 <p align="center">
   <img src="https://github.com/vhaghani26/vhaghani26.github.io/blob/main/CV_QR_Code.png" />
 </p>
-
-
-![github](https://github.com/vhaghani26/vhaghani26.github.io/blob/main/CV_QR_Code.png)
