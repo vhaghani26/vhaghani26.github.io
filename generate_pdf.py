@@ -19,10 +19,20 @@ cv_tab = soup.find(id="cv")
 if cv_tab:
     # Save the CV tab as a standalone HTML
     cv_html = f"<!DOCTYPE html><html><head><title>CV</title></head><body>{cv_tab}</body></html>"
+
+    # Define custom options for wkhtmltopdf
+    options = {
+        'no-outline': None,  # Disable outline
+        'disable-javascript': None,  # Disable JavaScript
+        'no-images': None,  # Optional: Disable images if not needed
+        'page-size': 'A4',
+        'disable-smart-shrinking': None,  # Disable automatic shrinking of content
+        'load-error-handling': 'ignore',  # Ignore load errors
+    }
     
-    # Convert the HTML to PDF
+    # Convert the HTML to PDF with the options
     filename = f"{datetime.now().strftime('%Y-%m-%d')}_CV.pdf"
-    pdfkit.from_string(cv_html, filename)  # Use cv_html instead of html
+    pdfkit.from_string(cv_html, filename, options=options)
     
     print("CV tab saved as PDF.")
 else:
